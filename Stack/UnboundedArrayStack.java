@@ -74,23 +74,39 @@ public class UnboundedArrayStack {
         System.out.println("Push : 5 Current Array size(index) : " + s.top + " Current Array Capacity(length) : " + s.arr.length);
         s.push(7);
         System.out.println("Push : 7 Current Array size(index) : " + s.top + " Current Array Capacity(length) : " + s.arr.length);
-        System.out.println("Top : " + s.top());
-        System.out.println("= = = = = = = =");
         
-        System.out.println("Pop : " + s.pop() + " Current Array size(index) : " + s.top + " Current Array Capacity(length) : " + s.arr.length); // remove 7
-        System.out.println("= = = = = = = =");
+        try {
+            System.out.println("Top : " + s.top());
+        } catch (NoSuchElementException e) {
+            System.out.println("Cannot pop - stack is empty. Moving to next operation...");
+        }
         
+        System.out.println("= = = = = = = =");
+
+        try {
+            System.out.println("Pop : " + s.pop() + " Current Array size(index) : " + s.top + " Current Array Capacity(length) : " + s.arr.length); // remove 7
+            System.out.println("= = = = = = = =");
+        } catch (NoSuchElementException e) {
+            System.out.println("Cannot pop - stack is empty. Moving to next operation...");
+        }
+
         s.push(9);
-        System.out.println("Push : 9 Current Array size(index) : " + s.top + " Current Array Capacity(length) : " + s.arr.length);
-        System.out.println("= = = = = = = =");
+            System.out.println("Push : 9 Current Array size(index) : " + s.top + " Current Array Capacity(length) : " + s.arr.length);
+            System.out.println("= = = = = = = =");
+
+        try {
+            System.out.println("Pop : " + s.pop() + " Current Array size(index) : " + s.top + " Current Array Capacity(length) : " + s.arr.length); // remove 7
+            System.out.println("= = = = = = = =");
+            System.out.println("Pop : " + s.pop() + " Current Array size(index) : " + s.top + " Current Array Capacity(length) : " + s.arr.length); // remove 7
+            System.out.println("= = = = = = = =");
+            System.out.println("Top : " + s.top());
+        } catch (NoSuchElementException e) {
+            System.out.println("Cannot pop - stack is empty. Moving to next operation...");
+        }
         
-        System.out.println("Pop : " + s.pop() + " Current Array size(index) : " + s.top + " Current Array Capacity(length) : " + s.arr.length); // remove 7
-        System.out.println("= = = = = = = =");
-        System.out.println("Pop : " + s.pop() + " Current Array size(index) : " + s.top + " Current Array Capacity(length) : " + s.arr.length); // remove 7
-        System.out.println("= = = = = = = =");
-        System.out.println("Top : " + s.top());
         System.out.println("isEmpty : " + s.empty());
         
     }
     
 }
+
