@@ -74,21 +74,32 @@ public class StackQueueEnqueueFriendly {
         System.out.println("Enqueue : 5");
         System.out.println("[ 3 , 5 ]");
         System.out.println("= = = = = =");
-        
-        System.out.println("Dequeue : " + q.dequeue());
-        System.out.println("[ 5 ]");
-        System.out.println("= = = = = =");
+
+        try {
+            System.out.println("Dequeue : " + q.dequeue());
+            System.out.println("[ 5 ]");
+            System.out.println("= = = = = =");
+        } catch (NoSuchElementException e) {
+            System.out.println("Cannot pop - stack is empty. Moving to next operation...");
+        }
+
         q.enqueue(7);
         System.out.println("Enqueue : 7");
         System.out.println("[ 5 , 7 ]");
         System.out.println("= = = = = =");
+
+        try {
+            System.out.println("Dequeue : " + q.dequeue());
+            System.out.println("[ 7 ]");
+            System.out.println("= = = = = =");
         
-        System.out.println("Dequeue : " + q.dequeue());
-        System.out.println("[ 7 ]");
-        System.out.println("= = = = = =");
+            System.out.println("Peek : " + q.peek());
+        } catch (NoSuchElementException e) {
+            System.out.println("Cannot pop - stack is empty. Moving to next operation...");
+        }
         
-        System.out.println("Peek : " + q.peek());
         System.out.println("isEmpty : " + q.empty());
     }
     
 }
+
