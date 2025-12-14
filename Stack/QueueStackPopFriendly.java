@@ -89,10 +89,12 @@ public class QueueStackPopFriendly {
             System.out.println("[3]\n");
             
             System.out.println("Peek : " + s.peek()); // show 3
-            System.out.println("isEmpty : " + s.empty());
+           
         } catch (NoSuchElementException e) {
             System.out.println("Cannot pop - stack is empty. Moving to next operation...");
         }   
+        System.out.println("isEmpty : " + s.empty());
     }
 }
+
 
