@@ -70,21 +70,29 @@ public class QueueStackPopFriendly {
         System.out.println("[3,5,7]");
         System.out.println("= = = = = = = =");
         
-        System.out.println("Pop : " + s.pop()); // remove 7
+        try {
+            System.out.println("Pop : " + s.pop()); // remove 7
+        } catch (NoSuchElementException e) {
+            System.out.println("Cannot pop - stack is empty. Moving to next operation...");
+        }
         System.out.println("[3,5]\n");
         
         s.push(9);
         System.out.println("Push : 9");
         System.out.println("[3,5,9]\n");
-        
-        System.out.println("Pop : " + s.pop()); // remove 9
-        System.out.println("[3,5]\n");
-        
-        System.out.println("Pop : " + s.pop()); // remove 5
-        System.out.println("[3]\n");
-        
-        System.out.println("Peek : " + s.peek()); // show 3
-        System.out.println("isEmpty : " + s.empty());
-        
+
+        try {
+            System.out.println("Pop : " + s.pop()); // remove 9
+            System.out.println("[3,5]\n");
+            
+            System.out.println("Pop : " + s.pop()); // remove 5
+            System.out.println("[3]\n");
+            
+            System.out.println("Peek : " + s.peek()); // show 3
+            System.out.println("isEmpty : " + s.empty());
+        } catch (NoSuchElementException e) {
+            System.out.println("Cannot pop - stack is empty. Moving to next operation...");
+        }   
     }
 }
+
